@@ -1,0 +1,74 @@
+/* print */
+
+@media print {
+
+    * { overflow: visible !important; }
+    .ant-scroll-number {
+        overflow: hidden !important;
+    }
+    .ant-collapse-content{
+        overflow: hidden !important;
+    }
+
+    body {
+        display: block;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        color: #000;
+        background-color: #fff;
+    }
+
+    .csp-header,.entity-tab,.csp-layout-sider, .csp-content-header {
+        display: none;
+    }
+
+
+/**
+dialog is using position:fixed, position fixed not able to print scrollable div, overwrite to absolute
+**/
+    .ant-modal-wrap{
+        position: absolute !important;
+    }
+
+    .ant-modal-mask{
+        position:absolute !important;
+        background-color: white;
+    }
+
+    .cdk-overlay-container{
+        position:absolute !important;
+    }
+    
+    .ant-modal{
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: auto !important;
+    }
+
+    .ant-modal-body{
+        max-height: unset !important;
+        padding: 15px !important;
+        page-break-after:always;
+    }
+    .ant-modal-footer{
+        display: none;
+    }
+
+    .ant-modal-close {
+        display: none;
+    }
+   
+
+    .overlay{
+        display: none;
+    }
+
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+}

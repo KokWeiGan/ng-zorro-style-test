@@ -1,0 +1,62 @@
+{
+  "scripts": {
+    "ng": "ng",
+    "serve": "node --max_old_space_size=4096  ./node_modules/@angular/cli/bin/ng serve",
+    "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --configuration production --build-optimizer=false --configuration=production && npm run theming",
+    "build:devops": "npm run build && grunt copy:output --output=\"%npm_config_output%\"",
+    "analyze": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --configuration production --stats-json",
+    "theming": "grunt copy:theme && node ./node_modules/less/bin/lessc --js --clean-css \"./dist/theme/styles/theme.less\" \"./dist/assets/theme.css\" && node ./compilation/rename-theme-image.js",
+    "icon": "ng g ng-alain:plugin icon"
+  },
+  "dependencies": {
+    "@angular/animations": "^18.2.11",
+    "@angular/cdk": "^18.2.12",
+    "@angular/cli": "^18.2.12",
+    "@angular/common": "^18.2.11",
+    "@angular/compiler": "^18.2.11",
+    "@angular/core": "^18.2.11",
+    "@angular/forms": "^18.2.11",
+    "@angular/platform-browser": "^18.2.11",
+    "@angular/platform-browser-dynamic": "^18.2.11",
+    "@angular/router": "^18.2.11",
+    "@ant-design/icons-angular": "^18.0.0",
+    "@ngx-formly/ng-zorro-antd": "6.3.10",
+    "@ngx-translate/core": "^16.0.3",
+    "@ngx-translate/http-loader": "^16.0.0",
+    "ng-zorro-antd": "^18.2.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^18.2.11",
+    "@angular-eslint/builder": "18.4.0",
+    "@angular-eslint/eslint-plugin": "18.4.0",
+    "@angular-eslint/eslint-plugin-template": "18.4.0",
+    "@angular-eslint/schematics": "18.4.0",
+    "@angular-eslint/template-parser": "18.4.0",
+    "@angular/compiler-cli": "^18.2.11",
+    "@angular/language-service": "^18.2.11",
+    "@angularclass/hmr": "^3.0.0",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@ngrx/schematics": "^18.1.1",
+    "@types/jasmine": "~5.1.4",
+    "@types/jasminewd2": "~2.0.13",
+    "@types/js-base64": "^3.3.1",
+    "@types/jszip": "^3.4.1",
+    "@types/mockjs": "^1.0.10",
+    "@types/node": "^22.9.0",
+    "antd-theme-generator": "^1.2.11",
+    "grunt": "^1.6.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "ng-alain": "^18.3.0",
+    "ng-alain-codelyzer": "^0.0.1",
+    "ts-node": "~10.9.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.5.4",
+    "webpack-bundle-analyzer": "^4.10.2"
+  },
+  "private": true,
+  "theme": {
+    "name": "pro",
+    "version": "8.2.1"
+  }
+}

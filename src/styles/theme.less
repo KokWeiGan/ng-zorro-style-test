@@ -1,0 +1,133 @@
+@import './theme/theme/styles/index.less';
+@import './theme/theme/styles/layout/default/index.less';
+@import './theme/theme/styles/layout/fullscreen/index.less';
+@import './theme/abc/index.less';@import './fix/index';
+@import './print.less';
+// -------- Variable Default Values -----------
+@overdue: @red-6;
+@duesoon: @orange-6;
+@further: @green-6;
+@screen-md-min: 768px;
+@screen-md-max: 991px;
+@header-text-color: #000;
+@header-background-color: #fff;
+@side-menu-background-colors: #fff;
+@side-menu-text-color: fade(#000, 65%);
+@content-background: #fff;
+@site-background: #f5f7fa;
+
+// Workflow Widgets
+@action-required-backgroud-color: @red-6;
+@pending-submission-backgroud-color: @red-6;
+@in-progress-backgroud-color: @orange-6;
+@submitted-backgroud-color: @green-6;
+@active-workflows-button-color: @red-6;
+@processing-workflows-button-color: @orange-6;
+
+// Timesheet
+@time-entry-approved-icon-color: @success-color;
+@timesheet-time-entry-new-or-edit-modal-fixed-fee-left-amount-green: @further;
+@timesheet-time-entry-new-or-edit-modal-fixed-fee-left-amount-amber: @duesoon;
+@timesheet-time-entry-new-or-edit-modal-fixed-fee-left-amount-red: @overdue;
+
+// -------- User Customized Values -----------
+@import './variables.less';
+
+@component-background: @content-background;
+@border-color-base: @border-color;
+@border-color-split: fade(@border-color-base, 50%);
+@border-color-inverse: spin(@border-color, 180);
+@text-color-secondary: fade(@text-color, 60%);
+@mfa-email-hyperlink-color-secondary: fade(@mfa-email-hyperlink-color, 60%);
+@side-menu-selected-color: fade(@primary-color, 5%);
+@side-menu-toggle-size: 40px;
+
+.csp-aside {
+    position: fixed;
+    top: 48px;
+}
+
+.csp-aside.hide {
+    display: none;
+}
+
+.ant-tabs-bar {
+    margin: 0;
+}
+
+.ant-tabs-nav-wrap {
+    padding-left: 10px;
+}
+
+@media (max-width: @screen-md-max) {
+    .csp-outer-content {
+        top: 0;
+    }
+}
+
+.page-header .ant-tabs {
+    margin: 0;
+}
+.page-header.full {
+    margin-left: 0;
+}
+
+#appowner::before {
+    content: @appowner-text;
+}
+
+@media (min-width: @screen-lg-min) {
+    .csp_outer_content {
+        margin-left: 224px;
+    }
+}
+
+.ant-layout {
+    background: @site-background;
+}
+
+gridster-item {
+    background-color: @component-background !important;
+}
+
+// Modal close button overlap with title fix.
+.ant-modal-header {
+    padding-right: 56px;
+}
+
+.ant-modal-body {
+    max-height: @modal-max-height;
+    overflow-y: auto;
+}
+
+// workflow step, fix the workflow step text truncated issue. nz-step default width is 140px
+.ant-steps-dot .ant-steps-item-content,
+.ant-steps-dot.ant-steps-small .ant-steps-item-content {
+    width: auto !important;
+}
+
+.line-dashed {
+    width: 100%;
+    height: 2px;
+    margin: 10px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    font-size: 0;
+    border-width: 0;
+    border-bottom: 1px dashed #dee5e7;
+}
+
+.ant-breadcrumb + .ant-page-header-heading {
+    margin-top: 0;
+}
+
+.ant-page-header-footer {
+    margin-top: 0;
+}
+
+.ant-tree-title,
+.ant-tree-text {
+    word-break: break-all;
+}
+ 

@@ -1,0 +1,17 @@
+/* stylelint-disable */
+.freakMixin() {
+    @functions: ~`(
+            function() {function tocolorlist(list) {list = list.slice(1, list.length - 1) .split(',') ; var ret = [];
+                for (var i = 0, c = list.length; i < c; i ++) {ret.push(list[i].trim() .split(' ')) ;} return ret;} var catchColors;
+                function _initcolor(list) {if ( !catchColors) catchColors = tocolorlist(list) ;} this.getColor = function(
+                    list,
+                    name,
+                    position
+                ) {_initcolor(list) ; var ret = '' ; for (var i = 0, c = catchColors.length; i < c; i ++) {if (
+                    catchColors[i][0] === name
+                ) {ret = catchColors[i][position - 1]; break;}} return ret;}}
+        )
+        () `;
+}
+.freakMixin();
+/* stylelint-enable */
