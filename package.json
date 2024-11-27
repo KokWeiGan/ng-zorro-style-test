@@ -1,7 +1,7 @@
 {
   "scripts": {
     "ng": "ng",
-    "serve": "node --max_old_space_size=4096  ./node_modules/@angular/cli/bin/ng serve",
+    "serve": "node ./node_modules/@angular/cli/bin/ng serve",
     "build": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --configuration production --build-optimizer=false --configuration=production && npm run theming",
     "build:devops": "npm run build && grunt copy:output --output=\"%npm_config_output%\"",
     "analyze": "node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build --configuration production --stats-json",
@@ -23,6 +23,7 @@
     "@ngx-formly/ng-zorro-antd": "6.3.10",
     "@ngx-translate/core": "^16.0.3",
     "@ngx-translate/http-loader": "^16.0.0",
+    "g": "^2.0.1",
     "ng-zorro-antd": "^18.2.1"
   },
   "devDependencies": {
